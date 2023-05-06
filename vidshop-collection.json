@@ -1,0 +1,451 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "VidShop",
+    "dateExported": "2023-05-06T18:37:56.077Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "2f043443-9bb1-4f1a-ad2e-80ae38ecfacd",
+            "name": "users",
+            "containerId": "",
+            "created": "2023-05-05T16:01:42.873Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "82df79aa-f683-483c-90de-f69b142b459e",
+            "name": "profiles",
+            "containerId": "",
+            "created": "2023-05-06T13:57:01.509Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "6d3127e6-50b2-46d2-9d35-34f205663bbc",
+            "name": "products",
+            "containerId": "",
+            "created": "2023-05-06T13:59:07.726Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "640d745f-a620-465c-b84a-092a7a1dafee",
+            "name": "categories",
+            "containerId": "",
+            "created": "2023-05-06T14:19:49.072Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "420e2b92-232c-4e73-86c2-e8d8e3e683e8",
+            "name": "wallets",
+            "containerId": "",
+            "created": "2023-05-06T14:20:13.380Z",
+            "sortNum": 50000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "ce3ada32-71ed-465d-ab92-7b661f08e193",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "2f043443-9bb1-4f1a-ad2e-80ae38ecfacd",
+            "name": "New User",
+            "url": "user",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-05T16:02:40.085Z",
+            "modified": "2023-05-06T14:06:23.880Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"moli\",\n  \"firstname\": \"Molli\",\n  \"lastname\": \"Molli\",\n  \"email\": \"moli@vidshop.com\",\n  \"password\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "814d0479-bbf5-4872-ab94-42fba3199497",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "82df79aa-f683-483c-90de-f69b142b459e",
+            "name": "New Profile",
+            "url": "http://localhost:4000/api/user",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-06T13:57:01.510Z",
+            "modified": "2023-05-06T13:57:01.510Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"moli\",\n  \"firstname\": \"Molli\",\n  \"lastname\": \"Molli\",\n  \"email\": \"moli@vidshop.com\",\n  \"password\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "abcae7e6-cd9b-4976-a478-6ece7e1b1a46",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "6d3127e6-50b2-46d2-9d35-34f205663bbc",
+            "name": "New Product",
+            "url": "product",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-06T13:59:07.726Z",
+            "modified": "2023-05-06T14:18:10.903Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"moli\",\n  \"firstname\": \"Molli\",\n  \"lastname\": \"Molli\",\n  \"email\": \"moli@vidshop.com\",\n  \"password\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d7689d69-43ba-4bc8-99d3-90b30b3476ee",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "640d745f-a620-465c-b84a-092a7a1dafee",
+            "name": "New Category",
+            "url": "category",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-06T14:19:49.073Z",
+            "modified": "2023-05-06T14:20:31.298Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"moli\",\n  \"firstname\": \"Molli\",\n  \"lastname\": \"Molli\",\n  \"email\": \"moli@vidshop.com\",\n  \"password\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a0925fc1-e0e1-4993-b733-8b70bdc707ac",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "420e2b92-232c-4e73-86c2-e8d8e3e683e8",
+            "name": "New Wallet",
+            "url": "wallet",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-06T14:20:13.380Z",
+            "modified": "2023-05-06T14:22:24.077Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"moli\",\n  \"firstname\": \"Molli\",\n  \"lastname\": \"Molli\",\n  \"email\": \"moli@vidshop.com\",\n  \"password\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "417a5922-17c0-4a23-a1e0-ea8a007302b0",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "2f043443-9bb1-4f1a-ad2e-80ae38ecfacd",
+            "name": "Edit User",
+            "url": "user/6456512e071d05881704876d",
+            "method": "PUT",
+            "sortNum": 25000,
+            "created": "2023-05-06T13:08:52.171Z",
+            "modified": "2023-05-06T14:07:02.810Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"molix\",\n  \"firstname\": \"Mollii\",\n  \"lastname\": \"Molli\",\n  \"email\": \"moli@vidshop.com\",\n  \"password\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e14dd4f0-5a13-4639-8989-d44d99fe71ed",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "82df79aa-f683-483c-90de-f69b142b459e",
+            "name": "Edit Profile",
+            "url": "profile/6456512e071d05881704876d",
+            "method": "PUT",
+            "sortNum": 25000,
+            "created": "2023-05-06T13:57:01.514Z",
+            "modified": "2023-05-06T14:16:59.027Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"molix\",\n  \"firstname\": \"Molli\",\n  \"lastname\": \"Molli\",\n  \"email\": \"moli@vidshop.com\",\n  \"password\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7b075ec6-4f89-473b-8371-06666eb2fb82",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "6d3127e6-50b2-46d2-9d35-34f205663bbc",
+            "name": "Edit Product",
+            "url": "product/6456512e071d05881704876d",
+            "method": "PUT",
+            "sortNum": 25000,
+            "created": "2023-05-06T13:59:07.727Z",
+            "modified": "2023-05-06T14:18:18.805Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"molix\",\n  \"firstname\": \"Molli\",\n  \"lastname\": \"Molli\",\n  \"email\": \"moli@vidshop.com\",\n  \"password\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1c43976e-ac7c-4872-93a6-15087d686964",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "640d745f-a620-465c-b84a-092a7a1dafee",
+            "name": "Edit Category",
+            "url": "category/6456512e071d05881704876d",
+            "method": "PUT",
+            "sortNum": 25000,
+            "created": "2023-05-06T14:19:49.074Z",
+            "modified": "2023-05-06T14:20:38.648Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"molix\",\n  \"firstname\": \"Molli\",\n  \"lastname\": \"Molli\",\n  \"email\": \"moli@vidshop.com\",\n  \"password\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bf52f138-3c3a-4ecd-be93-2cbd7070b019",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "420e2b92-232c-4e73-86c2-e8d8e3e683e8",
+            "name": "Edit Wallet",
+            "url": "wallet/6456512e071d05881704876d",
+            "method": "PUT",
+            "sortNum": 25000,
+            "created": "2023-05-06T14:20:13.381Z",
+            "modified": "2023-05-06T14:22:27.981Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"molix\",\n  \"firstname\": \"Molli\",\n  \"lastname\": \"Molli\",\n  \"email\": \"moli@vidshop.com\",\n  \"password\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1e800ad0-30d6-41eb-b02e-47b3de4ef7ab",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "2f043443-9bb1-4f1a-ad2e-80ae38ecfacd",
+            "name": "Get User",
+            "url": "user/6455299cb180cf6f2907fe56",
+            "method": "GET",
+            "sortNum": 27500,
+            "created": "2023-05-06T13:09:27.322Z",
+            "modified": "2023-05-06T14:09:41.701Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fedad8f4-5cf3-4138-b536-48d77d690e67",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "82df79aa-f683-483c-90de-f69b142b459e",
+            "name": "Get Profile",
+            "url": "profile/6455299cb180cf6f2907fe56",
+            "method": "GET",
+            "sortNum": 27500,
+            "created": "2023-05-06T13:57:01.515Z",
+            "modified": "2023-05-06T14:17:09.237Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "24cbf29a-3474-4ac5-81bf-069bec5fa837",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "6d3127e6-50b2-46d2-9d35-34f205663bbc",
+            "name": "Get Product",
+            "url": "product/6455299cb180cf6f2907fe56",
+            "method": "GET",
+            "sortNum": 27500,
+            "created": "2023-05-06T13:59:07.728Z",
+            "modified": "2023-05-06T14:18:30.411Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "be54f443-712f-44de-adbc-60f23710a143",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "640d745f-a620-465c-b84a-092a7a1dafee",
+            "name": "Get Category",
+            "url": "category/6455299cb180cf6f2907fe56",
+            "method": "GET",
+            "sortNum": 27500,
+            "created": "2023-05-06T14:19:49.075Z",
+            "modified": "2023-05-06T14:20:42.445Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c04a2c4d-44d7-48f3-971e-6a1c020a063c",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "420e2b92-232c-4e73-86c2-e8d8e3e683e8",
+            "name": "Get Wallet",
+            "url": "wallet/6455299cb180cf6f2907fe56",
+            "method": "GET",
+            "sortNum": 27500,
+            "created": "2023-05-06T14:20:13.382Z",
+            "modified": "2023-05-06T14:22:31.988Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "358c7884-041b-4b25-b253-96294b1d3ae6",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "2f043443-9bb1-4f1a-ad2e-80ae38ecfacd",
+            "name": "Delete User",
+            "url": "user/6455563963fadfb1a1a444b9",
+            "method": "DELETE",
+            "sortNum": 28750,
+            "created": "2023-05-06T13:29:56.034Z",
+            "modified": "2023-05-06T14:09:48.673Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8fde49a0-66f9-4d5b-add7-cb2a64040493",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "82df79aa-f683-483c-90de-f69b142b459e",
+            "name": "Delete Profile",
+            "url": "profile/6455563963fadfb1a1a444b9",
+            "method": "DELETE",
+            "sortNum": 28750,
+            "created": "2023-05-06T13:57:01.516Z",
+            "modified": "2023-05-06T14:17:21.113Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fb0a5d14-7bce-44f2-921b-f0a283896ee1",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "6d3127e6-50b2-46d2-9d35-34f205663bbc",
+            "name": "Delete Product",
+            "url": "product/6455563963fadfb1a1a444b9",
+            "method": "DELETE",
+            "sortNum": 28750,
+            "created": "2023-05-06T13:59:07.729Z",
+            "modified": "2023-05-06T14:19:01.458Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ff230de4-7cd7-46de-86f9-8386dc3d912b",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "640d745f-a620-465c-b84a-092a7a1dafee",
+            "name": "Delete Category",
+            "url": "category/6455563963fadfb1a1a444b9",
+            "method": "DELETE",
+            "sortNum": 28750,
+            "created": "2023-05-06T14:19:49.076Z",
+            "modified": "2023-05-06T14:20:45.945Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6a49dc85-6bb8-4ea3-b7e1-2b7384384afd",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "420e2b92-232c-4e73-86c2-e8d8e3e683e8",
+            "name": "Delete Wallet",
+            "url": "wallet/6455563963fadfb1a1a444b9",
+            "method": "DELETE",
+            "sortNum": 28750,
+            "created": "2023-05-06T14:20:13.383Z",
+            "modified": "2023-05-06T14:22:36.153Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d35ecc98-a5ae-498d-84a2-241642a5a6d6",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "2f043443-9bb1-4f1a-ad2e-80ae38ecfacd",
+            "name": "List Users",
+            "url": "user",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-05-05T16:03:04.397Z",
+            "modified": "2023-05-06T14:09:56.579Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1dd5f2c5-17b0-4ac8-b7c2-c52b0468d31b",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "82df79aa-f683-483c-90de-f69b142b459e",
+            "name": "List Profile",
+            "url": "profile",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-05-06T13:57:01.517Z",
+            "modified": "2023-05-06T14:17:26.198Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "74df1dce-b491-4bd4-81e0-49ef334cbea9",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "6d3127e6-50b2-46d2-9d35-34f205663bbc",
+            "name": "List Product",
+            "url": "product",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-05-06T13:59:07.730Z",
+            "modified": "2023-05-06T14:18:54.285Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1f493341-a62f-4ec9-b059-43b1f95cad49",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "640d745f-a620-465c-b84a-092a7a1dafee",
+            "name": "List Category",
+            "url": "category",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-05-06T14:19:49.078Z",
+            "modified": "2023-05-06T14:20:51.036Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "762433cb-1931-4efd-9692-ddb33dfe9c95",
+            "colId": "28179077-a8a8-424b-b324-6184f7d4d1f6",
+            "containerId": "420e2b92-232c-4e73-86c2-e8d8e3e683e8",
+            "name": "List Wallet",
+            "url": "wallet",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-05-06T14:20:13.384Z",
+            "modified": "2023-05-06T14:22:40.200Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ],
+    "settings": {
+        "docs": "This are the api end points for VidShop",
+        "options": {
+            "baseUrl": "http://localhost:4000/api/"
+        }
+    }
+}
