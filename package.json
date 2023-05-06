@@ -2,22 +2,14 @@
   "name": "vidserver",
   "version": "1.0.0",
   "description": "Server for TikTok like market place",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "keywords": [
-    "vidshop"
-  ],
+  "keywords": [],
   "author": "Jack Siro",
   "license": "ISC",
   "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "debug": "^4.3.4",
-    "express": "^4.18.2",
-    "http-errors": "^2.0.0",
-    "jade": "^1.11.0",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.22"
+    "express": "^4.17.1"
   }
 }
