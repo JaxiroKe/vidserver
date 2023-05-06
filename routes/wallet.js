@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const Product = require('../models/product');
+const Wallet = require('../models/wallet');
 
 /**
- * GET product list.
+ * GET wallet list.
  *
- * @return product list | empty.
+ * @return wallet list | empty.
  */
 router.get('/', (req, res, next) => {
   try {
-    Product.find({})
+    Wallet.find({})
       .then((data) => res.json({
         status: 200,
         data: data,
@@ -23,13 +23,13 @@ router.get('/', (req, res, next) => {
 });
 
 /**
- * GET single product.
+ * GET single wallet.
  *
- * @return product details | empty.
+ * @return wallet details | empty.
  */
 router.get('/:id', (req, res, next) => {
   try {
-    Product.findOne({ _id: req.params.id })
+    Wallet.findOne({ _id: req.params.id })
     .then((data) => res.json({
       status: 200,
       data: data,
@@ -42,13 +42,13 @@ router.get('/:id', (req, res, next) => {
 });
 
 /**
- * POST new product.
+ * POST new wallet.
  *
- * @return product details | empty.
+ * @return wallet details | empty.
  */
 router.post('/', (req, res, next) => {
   if (req.body.title) {
-    Product.create(req.body)
+    Wallet.create(req.body)
       .then((data) => res.json({
         status: 200,
         data: data,
@@ -60,14 +60,14 @@ router.post('/', (req, res, next) => {
 });
 
 /**
- * POST edit product.
+ * POST edit wallet.
  *
- * @return product details | empty.
+ * @return wallet details | empty.
  */
 router.post('/:id', (req, res, next) => {
   let myquery = { _id: ObjectId(req.params.id) };
   if (req.body.title) {
-    Product.updateOne(myquery, req.body, function (err, res) {
+    Wallet.updateOne(myquery, req.body, function (err, res) {
       if (err) throw err;
       console.log("1 document updated");
       response.json(res);
@@ -83,12 +83,12 @@ router.post('/:id', (req, res, next) => {
 });
 
 /**
- * DELETE a product.
+ * DELETE a wallet.
  *
  * @return delete result | empty.
  */
 router.delete('/:id', (req, res, next) => {
-  Product.findOneAndDelete({ _id: req.params.id })
+  Wallet.findOneAndDelete({ _id: req.params.id })
     .then((data) => res.json({
       status: 200,
       data: data,

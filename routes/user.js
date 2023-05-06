@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const Product = require('../models/product');
+const User = require('../models/user');
 
 /**
- * GET product list.
+ * GET user list.
  *
- * @return product list | empty.
+ * @return user list | empty.
  */
 router.get('/', (req, res, next) => {
   try {
-    Product.find({})
+    User.find({})
       .then((data) => res.json({
         status: 200,
         data: data,
@@ -23,18 +23,18 @@ router.get('/', (req, res, next) => {
 });
 
 /**
- * GET single product.
+ * GET single user.
  *
- * @return product details | empty.
+ * @return user details | empty.
  */
 router.get('/:id', (req, res, next) => {
   try {
-    Product.findOne({ _id: req.params.id })
-    .then((data) => res.json({
-      status: 200,
-      data: data,
-    }))
-    .catch(next);
+    User.findOne({ _id: req.params.id })
+      .then((data) => res.json({
+        status: 200,
+        data: data,
+      }))
+      .catch(next);
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server error");
@@ -42,13 +42,13 @@ router.get('/:id', (req, res, next) => {
 });
 
 /**
- * POST new product.
+ * POST new user.
  *
- * @return product details | empty.
+ * @return user details | empty.
  */
 router.post('/', (req, res, next) => {
-  if (req.body.title) {
-    Product.create(req.body)
+  if (req.body.username) {
+    User.create(req.body)
       .then((data) => res.json({
         status: 200,
         data: data,
@@ -60,38 +60,36 @@ router.post('/', (req, res, next) => {
 });
 
 /**
- * POST edit product.
+ * POST edit user.
  *
- * @return product details | empty.
+ * @return user details | empty.
  */
-router.post('/:id', (req, res, next) => {
-  let myquery = { _id: ObjectId(req.params.id) };
-  if (req.body.title) {
-    Product.updateOne(myquery, req.body, function (err, res) {
-      if (err) throw err;
-      console.log("1 document updated");
-      response.json(res);
-    })
+router.put('/:id', (req, res, next) => {
+  try {
+    const update = req.body;
+    User.findOneAndUpdate({ _id: req.params.id }, update, { new: true })
       .then((data) => res.json({
         status: 200,
         data: data,
+        message: 'User updated successfully',
       }))
       .catch(next);
-  } else {
-    res.json({ error: 'An input field is either empty or invalid', });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send("Server error");
   }
 });
 
 /**
- * DELETE a product.
+ * DELETE a user.
  *
  * @return delete result | empty.
  */
 router.delete('/:id', (req, res, next) => {
-  Product.findOneAndDelete({ _id: req.params.id })
+  User.findOneAndDelete({ _id: req.params.id })
     .then((data) => res.json({
       status: 200,
-      data: data,
+      message: 'User deleted successfully',
     }))
     .catch(next);
 });
