@@ -7,6 +7,12 @@ if (process.env.NODE_ENV !== 'production') {
 
 const app = express();
 
+app.use((_req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', '*');
+    next();
+});
+
 // Connect to MongoDB Atlas
 mongoose.connect(process.env.ATLAS_URI, {
     useNewUrlParser: true,
