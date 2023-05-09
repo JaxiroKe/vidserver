@@ -6,6 +6,7 @@ const profileSchema = new mongoose.Schema({
     bio: { type: String, required: false },
     address: { type: String, required: false },
     dobirth: { type: String, required: false },
+    lastseen: { type: Date, default: Date.now },
     created_at: { type: Date, default: Date.now }
 });
 
