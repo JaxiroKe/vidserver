@@ -10,12 +10,7 @@ const User = require('../models/user');
  */
 router.get('/', (req, res, next) => {
   try {
-    User.find({})
-      .then((data) => res.json({
-        status: 200,
-        data: data,
-      }))
-      .catch(next);
+    User.find({}).then((data) => res.json(data)).catch(next);
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server error");
@@ -29,12 +24,7 @@ router.get('/', (req, res, next) => {
  */
 router.get('/:id', (req, res, next) => {
   try {
-    User.findOne({ _id: req.params.id })
-      .then((data) => res.json({
-        status: 200,
-        data: data,
-      }))
-      .catch(next);
+    User.findOne({ _id: req.params.id }).then((data) => res.json(data)).catch(next);
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server error");
@@ -48,12 +38,7 @@ router.get('/:id', (req, res, next) => {
  */
 router.post('/', (req, res, next) => {
   if (req.body.username) {
-    User.create(req.body)
-      .then((data) => res.json({
-        status: 200,
-        data: data,
-      }))
-      .catch(next);
+    User.create(req.body).then((data) => res.json(data)).catch(next);
   } else {
     res.json({ error: 'An input field is either empty or invalid', });
   }

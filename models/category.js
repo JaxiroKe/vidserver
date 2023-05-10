@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const categorySchema = new mongoose.Schema({
-    parentid: { type: Number, required: false },
+    parentid: { type: String },
     title: { type: String, required: true, unique: true },
-    description: { type: String, required: false },
-    icon: { type: String, required: false },
+    description: { type: String },
+    icon: { type: String },
     created_at: { type: Date, default: Date.now }
 });
 
