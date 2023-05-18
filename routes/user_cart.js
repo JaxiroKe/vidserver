@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const Profile = require('../models/profile');
+const UserCart = require('../models/user_cart');
 
 /**
- * GET profile list.
+ * GET user cart list.
  *
- * @return profile list | empty.
+ * @return user cart list | empty.
  */
 router.get('/', (req, res, next) => {
   try {
-    Profile.find({}).then((data) => res.json(data)).catch(next);
+    UserCart.find({}).then((data) => res.json(data)).catch(next);
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server error");
@@ -18,13 +18,13 @@ router.get('/', (req, res, next) => {
 });
 
 /**
- * GET single profile.
+ * GET single user cart.
  *
- * @return profile details | empty.
+ * @return user cart details | empty.
  */
 router.get('/:id', (req, res, next) => {
   try {
-    Profile.findOne({ _id: req.params.id }).then((data) => res.json(data)).catch(next);
+    UserCart.findOne({ _id: req.params.id }).then((data) => res.json(data)).catch(next);
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server error");
@@ -32,27 +32,27 @@ router.get('/:id', (req, res, next) => {
 });
 
 /**
- * POST new profile.
+ * POST new user cart.
  *
- * @return profile details | empty.
+ * @return user cart details | empty.
  */
 router.post('/', (req, res, next) => {
   if (req.body.title) {
-    Profile.create(req.body).then((data) => res.json(data)).catch(next);
+    UserCart.create(req.body).then((data) => res.json(data)).catch(next);
   } else {
     res.json({ error: 'An input field is either empty or invalid', });
   }
 });
 
 /**
- * POST edit profile.
+ * POST edit user cart.
  *
- * @return profile details | empty.
+ * @return user cart details | empty.
  */
 router.post('/:id', (req, res, next) => {
   let myquery = { _id: ObjectId(req.params.id) };
   if (req.body.title) {
-    Profile.updateOne(myquery, req.body, function (err, res) {
+    UserCart.updateOne(myquery, req.body, function (err, res) {
       if (err) throw err;
       console.log("1 document updated");
       response.json(res);
@@ -63,12 +63,12 @@ router.post('/:id', (req, res, next) => {
 });
 
 /**
- * DELETE a profile.
+ * DELETE a user cart.
  *
  * @return delete result | empty.
  */
 router.delete('/:id', (req, res, next) => {
-  Profile.findOneAndDelete({ _id: req.params.id }).then((data) => res.json(data)).catch(next);
+  UserCart.findOneAndDelete({ _id: req.params.id }).then((data) => res.json(data)).catch(next);
 });
 
 module.exports = router;

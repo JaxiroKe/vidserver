@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const Wallet = require('../models/wallet');
+const UserWishlist = require('../models/user_wishlist');
 
 /**
- * GET wallet list.
+ * GET user wishlist list.
  *
- * @return wallet list | empty.
+ * @return user wishlist list | empty.
  */
 router.get('/', (req, res, next) => {
   try {
-    Wallet.find({}).then((data) => res.json(data)).catch(next);
+    UserWishlist.find({}).then((data) => res.json(data)).catch(next);
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server error");
@@ -18,13 +18,13 @@ router.get('/', (req, res, next) => {
 });
 
 /**
- * GET single wallet.
+ * GET single user wishlist.
  *
- * @return wallet details | empty.
+ * @return user wishlist details | empty.
  */
 router.get('/:id', (req, res, next) => {
   try {
-    Wallet.findOne({ _id: req.params.id }).then((data) => res.json(data)).catch(next);
+    UserWishlist.findOne({ _id: req.params.id }).then((data) => res.json(data)).catch(next);
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server error");
@@ -32,27 +32,27 @@ router.get('/:id', (req, res, next) => {
 });
 
 /**
- * POST new wallet.
+ * POST new user wishlist.
  *
- * @return wallet details | empty.
+ * @return user wishlist details | empty.
  */
 router.post('/', (req, res, next) => {
   if (req.body.title) {
-    Wallet.create(req.body).then((data) => res.json(data)).catch(next);
+    UserWishlist.create(req.body).then((data) => res.json(data)).catch(next);
   } else {
     res.json({ error: 'An input field is either empty or invalid', });
   }
 });
 
 /**
- * POST edit wallet.
+ * POST edit user wishlist.
  *
- * @return wallet details | empty.
+ * @return user wishlist details | empty.
  */
 router.post('/:id', (req, res, next) => {
   let myquery = { _id: ObjectId(req.params.id) };
   if (req.body.title) {
-    Wallet.updateOne(myquery, req.body, function (err, res) {
+    UserWishlist.updateOne(myquery, req.body, function (err, res) {
       if (err) throw err;
       console.log("1 document updated");
       response.json(res);
@@ -63,12 +63,12 @@ router.post('/:id', (req, res, next) => {
 });
 
 /**
- * DELETE a wallet.
+ * DELETE a user wishlist.
  *
  * @return delete result | empty.
  */
 router.delete('/:id', (req, res, next) => {
-  Wallet.findOneAndDelete({ _id: req.params.id }).then((data) => res.json(data)).catch(next);
+  UserWishlist.findOneAndDelete({ _id: req.params.id }).then((data) => res.json(data)).catch(next);
 });
 
 module.exports = router;

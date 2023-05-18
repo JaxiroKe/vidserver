@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const categorySchema = new mongoose.Schema({
+const modelSchema = new mongoose.Schema({
     parentid: { type: String },
     title: { type: String, required: true, unique: true },
     description: { type: String },
@@ -8,5 +8,4 @@ const categorySchema = new mongoose.Schema({
     created_at: { type: Date, default: Date.now }
 });
 
-const Category = mongoose.model('Category', categorySchema);
-module.exports = Category;
+module.exports = mongoose.model('Category', modelSchema);

@@ -7,5 +7,4 @@ const walletSchema = new mongoose.Schema({
     created_at: { type: Date, default: Date.now }
 });
 
-const Wallet = mongoose.model('Wallet', walletSchema);
-module.exports = Wallet;
+module.exports = mongoose.model('UserWallet', walletSchema);
