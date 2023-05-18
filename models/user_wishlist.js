@@ -6,4 +6,4 @@ const modelSchema = new mongoose.Schema({
     created_at: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('UserCart', modelSchema);;
+module.exports = mongoose.model('UserWishlist', modelSchema);;
