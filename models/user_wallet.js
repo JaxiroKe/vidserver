@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
 const walletSchema = new mongoose.Schema({
-    userid: { type: String, required: true },
+    walletid: { type: Number, unique: true },
+    user: { type: Number, required: true },
     title: { type: String, required: false },
     amount: { type: Number, default: 0 },
-    created_at: { type: Date, default: Date.now }
+    created_at: { type: Date, default: Date.now },
+    updated_at: { type: Date }
 });
 
 module.exports = mongoose.model('UserWallet', walletSchema);

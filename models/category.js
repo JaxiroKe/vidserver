@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const modelSchema = new mongoose.Schema({
+    categoryid: { type: Number, unique: true },
     parentid: { type: String },
     title: { type: String, required: true, unique: true },
     description: { type: String },

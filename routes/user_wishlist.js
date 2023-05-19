@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+const Acounter = require('../models/acounter');
 const UserWishlist = require('../models/user_wishlist');
 
 /**
@@ -10,7 +11,29 @@ const UserWishlist = require('../models/user_wishlist');
  */
 router.get('/', (req, res, next) => {
   try {
-    UserWishlist.find({}).then((data) => res.json(data)).catch(next);
+    Acounter.findOne({ _id: 'userwishlists' })
+      .then((counter) => {
+        req.body.wishlistid = counter.seq + 1;
+
+        UserWishlist.create(req.body)
+          .then((data) => {
+            Acounter.findOneAndUpdate({ _id: 'userwishlists' }, { $inc: { seq: 1 } }, { new: true }).then();
+            res.json(data);
+          })
+          .catch((error) => {
+            if (error.code === 11000) {
+              res.status(409).json({ error: 'Duplicate record found' });
+            } else {
+              res.status(500).json({ error: 'Internal server error' });
+            }
+            next(error);
+          });
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+        next(error);
+      });
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server error");

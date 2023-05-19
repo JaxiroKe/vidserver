@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+const Acounter = require('../models/acounter');
 const UserAccount = require('../models/user_account');
 
 /**
@@ -51,15 +52,28 @@ router.get('/email/:email', (req, res, next) => {
  */
 router.post('/', (req, res, next) => {
   if (req.body.username) {
-    UserAccount.create(req.body)
-      .then((data) => res.json(data))
+    Acounter.findOne({ _id: 'useraccounts' })
+      .then((counter) => {
+        req.body.userid = counter.seq + 1;
+
+        UserAccount.create(req.body)
+          .then((data) => {
+            Acounter.findOneAndUpdate({ _id: 'useraccounts' }, { $inc: { seq: 1 } }, { new: true }).then();
+            res.json(data);
+          })
+          .catch((error) => {
+            if (error.code === 11000) {
+              res.status(409).json({ error: 'Duplicate record found' });
+            } else {
+              res.status(500).json({ error: 'Internal server error' });
+            }
+            next(error);
+          });
+      })
       .catch((error) => {
-        if (error.code === 11000) {
-          res.status(409).json({ error: 'Duplicate record' });
-        } else {
-          res.status(500).json({ error: 'Internal server error' });
-        }
-        next(error); // Pass the error to the error handler middleware
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+        next(error);
       });
   } else {
     res.json({ error: 'An input field is either empty or invalid', });

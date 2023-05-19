@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+const Acounter = require('../models/acounter');
 const UserProfile = require('../models/user_profile');
 
 /**
@@ -10,7 +11,29 @@ const UserProfile = require('../models/user_profile');
  */
 router.get('/', (req, res, next) => {
   try {
-    UserProfile.find({}).then((data) => res.json(data)).catch(next);
+    Acounter.findOne({ _id: 'userprofiles' })
+      .then((counter) => {
+        req.body.profileid = counter.seq + 1;
+
+        UserProfile.create(req.body)
+          .then((data) => {
+            Acounter.findOneAndUpdate({ _id: 'userprofiles' }, { $inc: { seq: 1 } }, { new: true }).then();
+            res.json(data);
+          })
+          .catch((error) => {
+            if (error.code === 11000) {
+              res.status(409).json({ error: 'Duplicate record found' });
+            } else {
+              res.status(500).json({ error: 'Internal server error' });
+            }
+            next(error);
+          });
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+        next(error);
+      });
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server error");

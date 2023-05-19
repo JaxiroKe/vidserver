@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const modelSchema = new mongoose.Schema({
-    id: { type: Number, default: 0 },
+    productid: { type: Number, default: 0 },
+    categoryid: { type: Number, required: true },
     userid: { type: Number, default: 0 },
-    categoryid: { type: String, required: true },
     title: { type: String, required: true },
     description: { type: String, required: false },
     thumb_url: { type: String, required: true },
